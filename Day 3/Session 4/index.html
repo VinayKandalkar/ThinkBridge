@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a66c2">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-overlay"></div>
+      <div class="header-inner">
+        <a class="logo" href="#home" aria-label="Go to top">
+          <div class="avatar" aria-hidden="true">VK</div>
+          <div class="brand">
+            <h1>Vinay Kandalkar</h1>
+            <span class="tagline">Web Developer | Tech Enthusiast | Blogger</span>
+          </div>
+        </a>
+
+        <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation" aria-controls="site-nav">
+        <label for="nav-toggle" class="hamburger" role="button" aria-controls="site-nav" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="primary-nav" id="site-nav" role="navigation">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section id="about" class="card">
+        <h2>About Me</h2>
+        <div class="about-container">
+          <div class="about-text">
+            <p>
+              Hi, I’m Vinay from Amravati. I am a Computer Science Engineering
+              graduate from Prof. Ram Meghe College and have also completed a
+              CDAC course in Full Stack Development from Bangalore. I have a
+              passion for coding and love to create web applications. I enjoy
+              learning new technologies and continuously improving my skills.
+              When I’m not coding, I like to read tech blogs and explore new
+              trends in the tech world.
+            </p>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop"
+            alt="Coding Illustration" loading="lazy">
+        </div>
+      </section>
+
+      <section id="education" class="card">
+        <h2>Education</h2>
+        <ul>
+          <li>
+            <strong>B.E. in Computer Science</strong> - Prof. Ram Meghe College,
+            Amravati
+          </li>
+          <li><strong>CDAC</strong> - Full Stack Development, Bangalore</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="card">
+        <h2>Projects</h2>
+        <div class="card-grid">
+          <article class="project-card">
+            <h3>Online Book Club (MERN)</h3>
+            <p>Shop, sell, blog with Firebase authentication and modern UI.</p>
+            <a class="chip" href="#">View details</a>
+          </article>
+          <article class="project-card">
+            <h3>Clothing Shop Billing (Java)</h3>
+            <p>OOP app with GST, discounts, and configurable offer engine.</p>
+            <a class="chip" href="#">View details</a>
+          </article>
+          <article class="project-card">
+            <h3>Invoice Generator</h3>
+            <p>Dynamic invoice ID system with export-ready PDFs.</p>
+            <a class="chip" href="#">View details</a>
+          </article>
+          <article class="project-card">
+            <h3>Marathi Legends Landing</h3>
+            <p>Branding-forward community page with fast, accessible layout.</p>
+            <a class="chip" href="#">View details</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="card">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-box">Java, C++</div>
+          <div class="skill-box">Fullstack (MERN)</div>
+          <div class="skill-box">React + Tailwind</div>
+          <div class="skill-box">Firebase Auth</div>
+          <div class="skill-box">OOP & Data Structures</div>
+          <div class="skill-box">REST APIs</div>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <div class="contact-info">
+          <p>
+            Email:
+            <a href="mailto:vinaykandalkar2@gmail.com">vinaykandalkar2@gmail.com</a>
+          </p>
+          <p>Location: Amravati, India</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Vinay Kandalkar. All rights reserved.</footer>
+
+    <script>
+      (function() {
+        var navToggle = document.getElementById('nav-toggle');
+        var hamburger = document.querySelector('.hamburger');
+        var navLinks = document.querySelectorAll('.primary-nav a');
+
+        function syncAria() {
+          var expanded = !!(navToggle && navToggle.checked);
+          if (hamburger) hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        }
+
+        if (navToggle) {
+          navToggle.addEventListener('change', syncAria);
+        }
+
+        if (hamburger) {
+          hamburger.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              navToggle.checked = !navToggle.checked;
+              syncAria();
+            }
+          });
+        }
+
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            if (navToggle && navToggle.checked) {
+              navToggle.checked = false;
+              syncAria();
+            }
+          });
+        });
+
+        syncAria();
+      })();
+    </script>
+  </body>
+</html>

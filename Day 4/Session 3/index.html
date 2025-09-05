@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ThinkSchool Day 4 – DOM Playground</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 2rem; }
+    .section { margin-bottom: 1.5rem; }
+    label { display: inline-block; min-width: 6rem; }
+    #status.active { color: #0a7; font-weight: 700; }
+    #myBtn {
+      padding: 12px 32px;
+      font-size: 1.2rem;
+      background: linear-gradient(90deg, #4f8cff, #38e8ac);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      transition: 0.3s, transform 0.2s;
+      margin-bottom: 0.5rem;
+    }
+    #myBtn:hover {
+      background: linear-gradient(90deg, #38e8ac, #4f8cff);
+      transform: scale(1.05);
+    }
+    #myBtn:active {
+      transform: scale(0.98);
+    }
+    .active {
+      color: green;
+      font-weight: bold;
+    }
+    .highlight {
+      background: yellow;
+    }
+    #increment, #decrement {
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+      border-radius: 6px;
+      border: none;
+      background: #38e8ac;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s, transform 0.2s;
+    }
+    #increment:hover, #decrement:hover {
+      background: #4f8cff;
+      transform: scale(1.07);
+    }
+  </style>
+</head>
+<body>
+  <h1>DOM & Events – Practice</h1>
+
+  <div class="section">
+    <h2>Toggle Status</h2>
+    <p id="status">Inactive</p>
+    <button id="toggle">Toggle</button>
+  </div>
+
+  <div class="section">
+    <h2>Counter</h2>
+    <p>Count: <span id="counter">0</span></p>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+  </div>
+
+  <div class="section">
+    <h2>Live Greeting</h2>
+    <label for="nameInput">Name</label>
+    <input id="nameInput" type="text" placeholder="Type your name" />
+    <p id="greet"></p>
+  </div>
+
+  <div class="section">
+    <h2>Click Me Button</h2>
+    <button id="myBtn">Click Me</button>
+    <p id="myPara">Hello, world!</p>
+  </div>
+
+  <script src="dom.js"></script>
+</body>
+</html>

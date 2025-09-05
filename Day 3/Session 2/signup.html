@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessible Signup</title>
+    <link rel="stylesheet" href="../Session 3/style.css">
+</head>
+<body>
+     <header role="banner">
+        <h1>Create Your Account</h1>
+        <p>Join our community today with this accessible signup form</p>
+    </header>
+
+    <main role="main">
+        <form action="#" method="post" novalidate aria-labelledby="signup-heading" class="signup-form">
+            <h2 id="signup-heading">Signup Information</h2>
+            
+            <!-- Personal Information Fieldset -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <div class="form-group">
+                    <label for="firstName">First Name <span class="required" aria-label="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="firstName" 
+                        name="firstName" 
+                        required 
+                        aria-describedby="firstName-error firstName-help"
+                        autocomplete="given-name"
+                        minlength="2"
+                        maxlength="50"
+                    >
+                    <div id="firstName-help" class="help-text">Enter your legal first name</div>
+                    <div id="firstName-error" class="error-message" role="alert" aria-live="polite"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name <span class="required" aria-label="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="lastName" 
+                        name="lastName" 
+                        required 
+                        aria-describedby="lastName-error lastName-help"
+                        autocomplete="family-name"
+                        minlength="2"
+                        maxlength="50"
+                    >
+                    <div id="lastName-help" class="help-text">Enter your legal last name</div>
+                    <div id="lastName-error" class="error-message" role="alert" aria-live="polite"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        aria-describedby="email-error email-help"
+                        autocomplete="email"
+                        placeholder="your.email@example.com"
+                    >
+                    <div id="email-help" class="help-text">We'll use this to send you important updates</div>
+                    <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        aria-describedby="phone-help"
+                        autocomplete="tel"
+                        pattern="[0-9]{10}"
+                        placeholder="1234567890"
+                    >
+                    <div id="phone-help" class="help-text">Optional: 10-digit phone number</div>
+                </div>
+            </fieldset>
+
+            <!-- Account Security Fieldset -->
+            <fieldset>
+                <legend>Account Security</legend>
+                
+                <div class="form-group">
+                    <label for="password">Password <span class="required" aria-label="required">*</span></label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        aria-describedby="password-error password-requirements"
+                        autocomplete="new-password"
+                        minlength="8"
+                    >
+                    <div id="password-requirements" class="help-text">
+                        Password must be at least 8 characters long and contain:
+                        <ul>
+                            <li>At least one uppercase letter</li>
+                            <li>At least one lowercase letter</li>
+                            <li>At least one number</li>
+                            <li>At least one special character</li>
+                        </ul>
+                    </div>
+                    <div id="password-error" class="error-message" role="alert" aria-live="polite"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password <span class="required" aria-label="required">*</span></label>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        required 
+                        aria-describedby="confirmPassword-error"
+                        autocomplete="new-password"
+                    >
+                    <div id="confirmPassword-error" class="error-message" role="alert" aria-live="polite"></div>
+                </div>
+            </fieldset>
+
+            <!-- Preferences Fieldset -->
+            <fieldset>
+                <legend>Communication Preferences</legend>
+                
+                <div class="form-group checkbox-group">
+                    <fieldset>
+                        <legend>How would you like to receive updates?</legend>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="emailUpdates" name="updates" value="email" checked>
+                            <label for="emailUpdates">Email updates</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="smsUpdates" name="updates" value="sms">
+                            <label for="smsUpdates">SMS updates</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="pushUpdates" name="updates" value="push">
+                            <label for="pushUpdates">Push notifications</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <label for="newsletter">Newsletter Frequency</label>
+                    <select id="newsletter" name="newsletter" aria-describedby="newsletter-help">
+                        <option value="">Select frequency</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly" selected>Weekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="never">Never</option>
+                    </select>
+                    <div id="newsletter-help" class="help-text">Choose how often you'd like to receive our newsletter</div>
+                </div>
+            </fieldset>
+
+            <!-- Terms and Conditions -->
+            <div class="form-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="terms" name="terms" required aria-describedby="terms-error">
+                    <label for="terms">
+                        I agree to the <a href="#" target="_blank" rel="noopener noreferrer">Terms of Service</a> 
+                        and <a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                        <span class="required" aria-label="required">*</span>
+                    </label>
+                </div>
+                <div id="terms-error" class="error-message" role="alert" aria-live="polite"></div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                <button type="reset" class="btn btn-secondary">Clear Form</button>
+            </div>
+        </form>
+    </main>
+
+    <footer role="contentinfo">
+        <p>Need help? <a href="mailto:support@example.com">Contact our support team</a></p>
+    </footer>
+
+    <script src="form-validation.js"></script>
+</body>
+</html>
