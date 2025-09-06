@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Keywords Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Web Dev Keywords</h1>
+            <nav class="nav">
+                <button class="nav-btn active" data-section="html">HTML</button>
+                <button class="nav-btn" data-section="css">CSS</button>
+                <button class="nav-btn" data-section="javascript">JavaScript</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search keywords..." class="search-input">
+                <button id="searchBtn" class="search-btn">Search</button>
+                <button id="clearBtn" class="clear-btn" title="Clear search">×</button>
+            </div>
+
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="categoryFilter">Filter by Category:</label>
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="">All Categories</option>
+                        <option value="Document Structure">Document Structure</option>
+                        <option value="Semantic Elements">Semantic Elements</option>
+                        <option value="Text Elements">Text Elements</option>
+                        <option value="Media Elements">Media Elements</option>
+                        <option value="List Elements">List Elements</option>
+                        <option value="Container Elements">Container Elements</option>
+                        <option value="Form Elements">Form Elements</option>
+                        <option value="Table Elements">Table Elements</option>
+                        <option value="Typography">Typography</option>
+                        <option value="Background">Background</option>
+                        <option value="Layout">Layout</option>
+                        <option value="Variable Declarations">Variable Declarations</option>
+                        <option value="Function Declarations">Function Declarations</option>
+                        <option value="Control Flow">Control Flow</option>
+                        <option value="Loops">Loops</option>
+                        <option value="Error Handling">Error Handling</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sortBy">Sort by:</label>
+                    <select id="sortBy" class="filter-select">
+                        <option value="keyword">Keyword A-Z</option>
+                        <option value="category">Category</option>
+                        <option value="description">Description Length</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>HTML Keywords</h3>
+                    <span class="stat-number" id="htmlCount">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>CSS Keywords</h3>
+                    <span class="stat-number" id="cssCount">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>JavaScript Keywords</h3>
+                    <span class="stat-number" id="jsCount">0</span>
+                </div>
+            </div>
+
+            <div class="content">
+                <section id="html-section" class="keyword-section active">
+                    <h2>HTML Keywords & Elements</h2>
+                    <div class="keywords-grid" id="htmlKeywords">
+                        <!-- HTML keywords will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <section id="css-section" class="keyword-section">
+                    <h2>CSS Properties & Selectors</h2>
+                    <div class="keywords-grid" id="cssKeywords">
+                        <!-- CSS keywords will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <section id="javascript-section" class="keyword-section">
+                    <h2>JavaScript Keywords & Methods</h2>
+                    <div class="keywords-grid" id="jsKeywords">
+                        <!-- JavaScript keywords will be populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Web Development Keywords Showcase - ThinkBridge Day 6</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
